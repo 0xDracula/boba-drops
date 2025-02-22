@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Boba Wonderland ❄️🧋</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #1d637d;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .title {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px black;
+        }
+        .boba {
+            font-size: 2em;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        .snowflake {
+            position: absolute;
+            top: -50px;
+            color: white;
+            opacity: 0.8;
+            font-size: 1.5em;
+            animation: fall linear infinite;
+        }
+        .button {
+            background: rgb(227, 227, 255);
+            color: rgb(0, 0, 0);
+            font-size: 1.2em;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px rgba(129, 104, 104, 0.3);
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Winter Boba ❄️🧋</h1>
+    </div>
+    <img src="pngegg.png" alt="">
+    <div class="container">
+        <h2>Boba store is now open!</p>
+        <button class="button">Buy Boba</button>
+
+    </div>
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.innerHTML = '❄️';
+            snowflake.classList.add('snowflake');
+            document.body.appendChild(snowflake);
+            
+            snowflake.style.left = Math.random() * (window.innerWidth - 30) + 'px';
+            snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        setInterval(createSnowflake, 200);
+    </script>
+</body>
+</html>
